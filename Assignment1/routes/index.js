@@ -1,3 +1,9 @@
+/*
+  Student name: Dênio Barbosa Júnior
+  Student ID: 301165098
+  Class: COMP229 - Web Application Development
+  
+*/
 var express = require("express");
 var router = express.Router();
 
