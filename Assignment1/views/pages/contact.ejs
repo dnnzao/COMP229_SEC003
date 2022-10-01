@@ -10,7 +10,7 @@
         <div  class="text-center text-muted" >
             <h1 class="text-center text-muted" >Contact</h1>
                 <main class="text-center text-muted" >
-                    <form class="form" action="mailto:jdoe@centennialcollege.ca" method="post">
+                    <form class="form" action="/contact/info" method="POST">
                         <fieldset>
                             <legend><b>Personal Information</b></legend>
                             <div>
@@ -37,8 +37,8 @@
                             </div>
                         </fieldset>
                             <div>
-                                <input type="submit" name="btnSubmit" value="Complete Registration" tabindex="36">
-                                <input type="reset" name="btnReset" value="Clear Form" onclick="return confirm('Do you really want to reset?')" tabindex="39">
+                                <button type="submit" name="btnSubmit" value="Complete Registration" tabindex="36">Confirm</button>
+                                <button type="reset" name="btnReset" value="Clear Form" onclick="return confirm('Do you really want to reset?')" tabindex="39">Reset</button>
                             </div>
                         </fieldset>
                     </form>

@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 
@@ -12,11 +13,16 @@ var app = express();
 app.set("views", path.join(__dirname, "views/pages"));
 app.set("view engine", "ejs");
 
-app.use(logger("dev"));
+//app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+mongoose.connect(
+  "mongodb+srv://dbarbosajr:iWScfNCuJtdh0duu@cluster0.i8lyxld.mongodb.net/?retryWrites=true&w=majority"
+);
+
 
 app.use("/", indexRouter);
 

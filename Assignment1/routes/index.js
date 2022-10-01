@@ -5,6 +5,7 @@
   
 */
 var express = require("express");
+const Assignment1 = require("../model/assigment1.model");
 var router = express.Router();
 
 /* GET home page. */
@@ -32,6 +33,22 @@ router.get("/contact", function (req, res, next) {
   res.render("contact", {
     title: "COMP 229 - Assignment 1 - Contact Information",
   });
+});
+
+/* POST for the Contact page*/
+router.post("/contact/info", async function (req, res, next) {
+  //console.log(req.body);
+  const contact_information = new Assignment1({
+    first_name: req.body.txtFirstName,
+    last_name: req.body.txtLastName,
+    phone: req.body.txtPhone,
+    email: req.body.txtEmail,
+    contact_input: req.body.contact_input,
+  });
+
+  await contact_information.save();
+
+  res.redirect("/");
 });
 
 module.exports = router;
