@@ -1,3 +1,9 @@
+/*
+  Student name: Dênio Barbosa Júnior
+  Student ID: 301165098
+  Class: COMP229 - Web Application Development
+  
+*/
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -22,7 +28,6 @@ app.use(express.static(path.join(__dirname, "public")));
 mongoose.connect(
   "mongodb+srv://dbarbosajr:iWScfNCuJtdh0duu@cluster0.i8lyxld.mongodb.net/?retryWrites=true&w=majority"
 );
-
 
 app.use("/", indexRouter);
 
