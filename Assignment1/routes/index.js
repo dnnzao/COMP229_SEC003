@@ -43,7 +43,7 @@ router.post("/contact/info", async function (req, res, next) {
     last_name: req.body.txtLastName,
     phone: req.body.txtPhone,
     email: req.body.txtEmail,
-    contact_input: req.body.contact_input,
+    contact_input: req.body.txtSpecialRq,
   });
 
   await contact_information.save();
